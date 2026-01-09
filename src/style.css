@@ -29,6 +29,7 @@ body {
 .titulo span {
     color: var(--primario);
     display: block;
+    margin-top: 1rem;
     font-size: 4.4rem;
 }
 .contenido {
