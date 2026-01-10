@@ -49,9 +49,10 @@
                     </select>
                 </div>
 
+                <input type="submit" value="Cotizar" />
+
             </form>
 
-            <input type="submit" value="Cotizar" />
 
         </div>
     </div>
