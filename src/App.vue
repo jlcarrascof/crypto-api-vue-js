@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="campo">
-                    <label for="cripto">Currency: </label>
+                    <label for="cripto">Criptocurrency: </label>
                     <select id="cripto">
                         <option value="">-- Select --</option>
                         <option 
@@ -49,7 +49,7 @@
                     </select>
                 </div>
 
-                <input type="submit" value="Cotizar" />
+                <input type="submit" value="Price Quote" />
 
             </form>
 
