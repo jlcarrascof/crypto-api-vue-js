@@ -20,7 +20,11 @@
                     <label for="moneda">Currency: </label>
                     <select id="moneda">
                         <option value="">-- Select --</option>
-                        <option v-for="moneda in monedas" value="">{{ moneda.texto }}</option>
+                        <option 
+                            v-for="moneda in monedas" 
+                            :value="moneda.codigo">
+                                {{ moneda.texto }}
+                        </option>
                     </select>
                 </div>
             </form>
