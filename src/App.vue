@@ -14,13 +14,17 @@
         <h1 class="titulo">Cryptocurrency <span>Price Ticker</span></h1>
 
         <div class="contenido">
-            <div class="campo">
-                <label for="moneda">Currency: </label>
-                <select id="moneda">
-                    <option value="">-- Select --</option>
-                    <option v-for="moneda in monedas" value="">{{ moneda.texto }}</option>
-                </select>
-            </div>
+
+            <form class="formulario">
+                <div class="campo">
+                    <label for="moneda">Currency: </label>
+                    <select id="moneda">
+                        <option value="">-- Select --</option>
+                        <option v-for="moneda in monedas" value="">{{ moneda.texto }}</option>
+                    </select>
+                </div>
+            </form>
+
         </div>
     </div>
 </template>
