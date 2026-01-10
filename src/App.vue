@@ -36,6 +36,19 @@
                         </option>
                     </select>
                 </div>
+
+                <div class="campo">
+                    <label for="cripto">Currency: </label>
+                    <select id="cripto">
+                        <option value="">-- Select --</option>
+                        <option 
+                            v-for="criptomoneda in criptomonedas" 
+                            :value="criptomoneda.CoinInfo.Name">
+                                {{ criptomoneda.CoinInfo.FullName }}
+                        </option>
+                    </select>
+                </div>
+
             </form>
 
         </div>
