@@ -51,6 +51,8 @@
 
             </form>
 
+            <input type="submit" value="Cotizar" />
+
         </div>
     </div>
 </template>
