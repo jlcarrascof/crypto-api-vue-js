@@ -28,7 +28,10 @@
 
         <div class="contenido">
 
-            <form class="formulario">
+            <form 
+                class="formulario"
+                @submit.prevent="cotizarCripto"
+            >
                 <div class="campo">
                     <label for="moneda">Currency: </label>
                     <select 
