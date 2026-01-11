@@ -20,6 +20,10 @@
             .then(respuesta => respuesta.json())
             .then(({Data}) => criptomonedas.value = Data)
     })
+
+    const cotizarCripto = () => {
+        console.log('Cotizando ....')
+    }
 </script>
 
 <template>
