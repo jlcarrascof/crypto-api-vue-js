@@ -1,5 +1,6 @@
 <script setup>
     import { ref, onMounted, reactive } from 'vue'
+    import Alerta from './components/Alerta.vue'
 
     const monedas = ref([
         { codigo: 'USD', texto: 'Dolar de Estados Unidos'},
