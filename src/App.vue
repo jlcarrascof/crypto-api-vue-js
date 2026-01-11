@@ -31,7 +31,10 @@
             <form class="formulario">
                 <div class="campo">
                     <label for="moneda">Currency: </label>
-                    <select id="moneda">
+                    <select 
+                        id="moneda"
+                        v-model="cotizar.moneda"
+                    >
                         <option value="">-- Select --</option>
                         <option 
                             v-for="moneda in monedas" 
@@ -43,7 +46,10 @@
 
                 <div class="campo">
                     <label for="cripto">Criptocurrency: </label>
-                    <select id="cripto">
+                    <select 
+                        id="cripto"
+                        v-model = "cotizar.criptomoneda"
+                    >
                         <option value="">-- Select --</option>
                         <option 
                             v-for="criptomoneda in criptomonedas" 
