@@ -22,6 +22,12 @@
     })
 
     const cotizarCripto = () => {
+        // Checking that cotizar is full
+        if (Object.values(cotizar).includes('')) {
+            console.log('All fields are mandatory...')
+            return
+        }
+
         console.log('Cotizando ....')
     }
 </script>
