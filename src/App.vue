@@ -29,7 +29,7 @@
             error.value = 'All fields are mandatory...'
             return
         }
-
+        error.value = ''
         console.log('Cotizando ....')
     }
 </script>
