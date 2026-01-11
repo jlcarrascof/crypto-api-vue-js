@@ -10,6 +10,7 @@
     ])
 
     const criptomonedas = ref([])
+    const error = ref('')
     const cotizar = reactive({
         moneda: '',
         criptomoneda: '',
@@ -25,7 +26,7 @@
     const cotizarCripto = () => {
         // Checking that cotizar is full
         if (Object.values(cotizar).includes('')) {
-            console.log('All fields are mandatory...')
+            error.value = 'All fields are mandatory...'
             return
         }
 
@@ -38,7 +39,9 @@
         <h1 class="titulo">Cryptocurrency <span>Price Ticker</span></h1>
 
         <div class="contenido">
-
+            <Alerta v-if="error">
+                {{ error }}
+            </Alerta>
             <form 
                 class="formulario"
                 @submit.prevent="cotizarCripto"
