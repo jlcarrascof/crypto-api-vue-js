@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, onMounted } from 'vue'
+    import { ref, onMounted, reactive } from 'vue'
 
     const monedas = ref([
         { codigo: 'USD', texto: 'Dolar de Estados Unidos'},
@@ -9,6 +9,10 @@
     ])
 
     const criptomonedas = ref([])
+    const cotizar = reactive({
+        moneda: '',
+        criptomoneda: '',
+    })
 
     onMounted(() => {
         const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?tsym=USD&limit=20';
