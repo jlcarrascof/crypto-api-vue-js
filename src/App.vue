@@ -42,7 +42,7 @@
         const answer = await fetch(url)
         const data = await answer.json()
 
-        console.log(data.DISPLAY[criptomoneda][moneda])
+        cotizacion.value = data.DISPLAY[criptomoneda][moneda] 
     }
 </script>
 
