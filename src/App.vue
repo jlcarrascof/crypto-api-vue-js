@@ -38,7 +38,10 @@
         const { moneda, criptomoneda } = cotizar
         const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
 
-        console.log(url)
+        const answer = await fetch(url)
+        const data = await answer.json()
+
+        console.log(data.DISPLAY[criptomoneda][moneda])
     }
 </script>
 
