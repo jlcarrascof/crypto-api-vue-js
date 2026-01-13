@@ -35,7 +35,8 @@
     }
 
     const obtenerCotizacion = async () => {
-        const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD`
+        const { moneda, criptomoneda } = cotizar
+        const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
     }
 </script>
 
