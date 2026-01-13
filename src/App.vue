@@ -30,7 +30,12 @@
             return
         }
         error.value = ''
-        console.log('Cotizando ....')
+
+        obtenerCotizacion()
+    }
+
+    const obtenerCotizacion = async () => {
+        const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD`
     }
 </script>
 
