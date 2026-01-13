@@ -92,6 +92,17 @@
 
             </form>
 
+            <div class="contenedor-resultado">
+                <h2>Price Quote</h2>
+
+                <div class="resultado">
+                    <img src="" alt="crypto image" />
+                    <div>
+                        <p>The price is: <span>{{ cotizacion.PRICE }}</span></p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </template>
