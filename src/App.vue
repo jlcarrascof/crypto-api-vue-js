@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, onMounted, reactive } from 'vue'
+    import { ref, onMounted, reactive, computed } from 'vue'
     import Alerta from './components/Alerta.vue'
 
     const monedas = ref([
@@ -16,6 +16,10 @@
         criptomoneda: '',
     })
     const cotizacion = ref({})
+
+    const mostrarResultado = computed(() => {
+        return Object.keys(cotizacion.value).length > 0
+    })    
     
     onMounted(() => {
         const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?tsym=USD&limit=20';
@@ -44,6 +48,8 @@
 
         cotizacion.value = data.DISPLAY[criptomoneda][moneda] 
     }
+
+
 </script>
 
 <template>
