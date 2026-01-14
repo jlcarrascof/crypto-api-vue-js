@@ -98,7 +98,7 @@
 
             </form>
 
-            <div class="contenedor-resultado">
+            <div class="contenedor-resultado" v-if="mostrarResultado">
                 <h2>Price Quote</h2>
 
                 <div class="resultado">
