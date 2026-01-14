@@ -96,7 +96,10 @@
                 <h2>Price Quote</h2>
 
                 <div class="resultado">
-                    <img src="" alt="crypto image" />
+                    <img 
+                        :src="'https://cryptocompare.com/' + cotizacion.IMAGEURL" 
+                        alt="crypto image" 
+                    />
                     <div>
                         <p>The price is: <span>{{ cotizacion.PRICE }}</span></p>
                     </div>
