@@ -17,10 +17,6 @@
     })
     const cotizacion = ref({})
 
-    const mostrarResultado = computed(() => {
-        return Object.keys(cotizacion.value).length > 0
-    })    
-    
     onMounted(() => {
         const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?tsym=USD&limit=20';
         fetch(url)
@@ -49,6 +45,9 @@
         cotizacion.value = data.DISPLAY[criptomoneda][moneda] 
     }
 
+    const mostrarResultado = computed(() => {
+        return Object.values(cotizacion.value).length > 0
+    })    
 
 </script>
 
