@@ -18,7 +18,9 @@
     const cotizacion = ref({})
 
     const mostrarResultado = computed(() => {
-        return Object.keys(cotizacion.value).length > 0
+        return cotizar.value.moneda && 
+               cotizar.value.criptomoneda && 
+               Object.keys(cotizacion.value).length > 0
     })    
     
     onMounted(() => {
