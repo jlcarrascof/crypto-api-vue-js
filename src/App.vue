@@ -39,14 +39,21 @@
 
     const obtenerCotizacion = async () => {
         cargando.value = true
-        const { moneda, criptomoneda } = cotizar
-        const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
+        cotizacion.value = {}
 
-        const answer = await fetch(url)
-        const data = await answer.json()
+        try {
+            const { moneda, criptomoneda } = cotizar
+            const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
 
-        cotizacion.value = data.DISPLAY[criptomoneda][moneda] 
-        cargando.value = false
+            const answer = await fetch(url)
+            const data = await answer.json()
+
+            cotizacion.value = data.DISPLAY[criptomoneda][moneda] 
+        } catch (error) {
+            console.log(error)     
+        } finally {
+            cargando.value = false
+        }
     }
 
     const mostrarResultado = computed(() => {
