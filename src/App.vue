@@ -17,6 +17,7 @@
         criptomoneda: '',
     })
     const cotizacion = ref({})
+    const cargando = ref(false)
 
     onMounted(() => {
         const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?tsym=USD&limit=20';
@@ -37,6 +38,7 @@
     }
 
     const obtenerCotizacion = async () => {
+        cargando.value = true
         const { moneda, criptomoneda } = cotizar
         const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
 
@@ -44,6 +46,7 @@
         const data = await answer.json()
 
         cotizacion.value = data.DISPLAY[criptomoneda][moneda] 
+        cargando.value = false
     }
 
     const mostrarResultado = computed(() => {
@@ -98,7 +101,9 @@
 
             </form>
 
-            <Spinner />
+            <Spinner 
+                v-if="cargando"
+            />
 
             <div class="contenedor-resultado" v-if="mostrarResultado">
                 <h2>Price Quote</h2>
