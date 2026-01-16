@@ -43,5 +43,9 @@ export default function useCripto() {
 
     return {
         monedas,
+        criptomonedas,
+        cargando,
+        cotizacion,
+        obtenerCotizacion,
     }
 }
