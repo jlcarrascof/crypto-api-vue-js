@@ -20,7 +20,7 @@
         }
         error.value = ''
 
-        obtenerCotizacion()
+        obtenerCotizacion(cotizar)
     }
 
     const mostrarResultado = computed(() => {

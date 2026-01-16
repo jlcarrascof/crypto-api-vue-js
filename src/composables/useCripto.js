@@ -22,7 +22,7 @@ export default function useCripto() {
             .then(({Data}) => criptomonedas.value = Data)
     })
 
-    const obtenerCotizacion = async () => {
+    const obtenerCotizacion = async (cotizar) => {
         cargando.value = true
         cotizacion.value = {}
 
