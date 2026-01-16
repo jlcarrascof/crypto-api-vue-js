@@ -1,26 +1,16 @@
 <script setup>
-    import { ref, onMounted, reactive } from 'vue'
+    import { ref, reactive } from 'vue'
     import Alerta from './components/Alerta.vue'
+    import Spinner from './components/Spinner.vue'
+    import Cotizacion from './components/Cotizacion.vue'
+    import useCripto from './composables/useCripto'
 
-    const monedas = ref([
-        { codigo: 'USD', texto: 'Dolar de Estados Unidos'},
-        { codigo: 'MXN', texto: 'Peso Mexicano'},
-        { codigo: 'EUR', texto: 'Euro'},
-        { codigo: 'GBP', texto: 'Libra Esterlina'},
-    ])
+    const { monedas, criptomonedas, cargando, cotizacion, obtenerCotizacion, mostrarResultado } = useCripto()
 
-    const criptomonedas = ref([])
     const error = ref('')
     const cotizar = reactive({
         moneda: '',
         criptomoneda: '',
-    })
-
-    onMounted(() => {
-        const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?tsym=USD&limit=20';
-        fetch(url)
-            .then(respuesta => respuesta.json())
-            .then(({Data}) => criptomonedas.value = Data)
     })
 
     const cotizarCripto = () => {
@@ -31,15 +21,9 @@
         }
         error.value = ''
 
-        obtenerCotizacion()
+        obtenerCotizacion(cotizar)
     }
 
-    const obtenerCotizacion = async () => {
-        const { moneda, criptomoneda } = cotizar
-        const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
-
-        console.log(url)
-    }
 </script>
 
 <template>
@@ -87,6 +71,13 @@
                 <input type="submit" value="Price Quote" />
 
             </form>
+
+            <Spinner v-if="cargando" />
+
+            <Cotizacion 
+                v-if="mostrarResultado"
+                :cotizacion = "cotizacion" 
+            />
 
         </div>
     </div>
