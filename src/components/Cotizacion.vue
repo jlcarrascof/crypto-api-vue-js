@@ -1,3 +1,7 @@
+<script setup>
+
+</script>
+
 <template>
     <div class="contenedor-resultado" v-if="mostrarResultado">
         <h2>Price Quote</h2>
@@ -18,10 +22,6 @@
     </div>
 </template>
 
-<script setup>
-
-</script>
-
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
