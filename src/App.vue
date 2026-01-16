@@ -4,7 +4,7 @@
     import Spinner from './components/Spinner.vue'
     import useCripto from './composables/useCripto'
 
-    const { monedas, criptomonedas, cargando, cotizacion, obtenerCotizacion } = useCripto()
+    const { monedas, criptomonedas, cargando, cotizacion, obtenerCotizacion, mostrarResultado } = useCripto()
 
     const error = ref('')
     const cotizar = reactive({
