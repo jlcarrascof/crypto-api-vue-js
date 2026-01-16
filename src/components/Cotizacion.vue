@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="contenedor-resultado" v-if="mostrarResultado">
+    <div class="contenedor-resultado">
         <h2>Price Quote</h2>
 
         <div class="resultado">
