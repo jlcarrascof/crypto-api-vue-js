@@ -11,8 +11,6 @@
         moneda: '',
         criptomoneda: '',
     })
-    const cotizacion = ref({})
-    const cargando = ref(false)
 
     const cotizarCripto = () => {
         // Checking that cotizar is full
@@ -23,25 +21,6 @@
         error.value = ''
 
         obtenerCotizacion()
-    }
-
-    const obtenerCotizacion = async () => {
-        cargando.value = true
-        cotizacion.value = {}
-
-        try {
-            const { moneda, criptomoneda } = cotizar
-            const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`
-
-            const answer = await fetch(url)
-            const data = await answer.json()
-
-            cotizacion.value = data.DISPLAY[criptomoneda][moneda] 
-        } catch (error) {
-            console.log(error)     
-        } finally {
-            cargando.value = false
-        }
     }
 
     const mostrarResultado = computed(() => {
