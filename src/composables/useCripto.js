@@ -1,12 +1,15 @@
-export default function useCripto() {
-    const cotizarMoneda = () => {
-        console.log('Cotizando desde useCripto()')
-    }
+import { ref } from 'vue'
 
-    const auth = false
+export default function useCripto() {
+
+    const monedas = ref([
+        { codigo: 'USD', texto: 'Dolar de Estados Unidos'},
+        { codigo: 'MXN', texto: 'Peso Mexicano'},
+        { codigo: 'EUR', texto: 'Euro'},
+        { codigo: 'GBP', texto: 'Libra Esterlina'},
+    ])
 
     return {
-        cotizarMoneda,
-        auth
+        monedas,
     }
 }

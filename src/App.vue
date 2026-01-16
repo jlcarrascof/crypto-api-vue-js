@@ -4,18 +4,7 @@
     import Spinner from './components/Spinner.vue'
     import useCripto from './composables/useCripto'
 
-    const { cotizarMoneda, auth } = useCripto()
-
-    cotizarMoneda()
-
-    console.log(auth)
-
-    const monedas = ref([
-        { codigo: 'USD', texto: 'Dolar de Estados Unidos'},
-        { codigo: 'MXN', texto: 'Peso Mexicano'},
-        { codigo: 'EUR', texto: 'Euro'},
-        { codigo: 'GBP', texto: 'Libra Esterlina'},
-    ])
+    const { monedas } = useCripto()
 
     const criptomonedas = ref([])
     const error = ref('')
