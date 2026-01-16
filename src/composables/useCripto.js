@@ -11,6 +11,10 @@ export default function useCripto() {
         { codigo: 'GBP', texto: 'Libra Esterlina'},
     ])
 
+    const cotizacion = ref({})
+    const cargando = ref(false)
+
+
     onMounted(() => {
         const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?tsym=USD&limit=20';
         fetch(url)
