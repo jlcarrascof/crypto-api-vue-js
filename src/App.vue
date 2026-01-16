@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, reactive, computed } from 'vue'
+    import { ref, reactive } from 'vue'
     import Alerta from './components/Alerta.vue'
     import Spinner from './components/Spinner.vue'
     import useCripto from './composables/useCripto'
@@ -22,10 +22,6 @@
 
         obtenerCotizacion(cotizar)
     }
-
-    const mostrarResultado = computed(() => {
-        return Object.values(cotizacion.value).length > 0
-    })    
 
 </script>
 

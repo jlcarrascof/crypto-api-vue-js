@@ -1,4 +1,4 @@
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 
 export default function useCripto() {
 
@@ -41,11 +41,16 @@ export default function useCripto() {
         }
     }
 
+    const mostrarResultado = computed(() => {
+        return Object.values(cotizacion.value).length > 0
+    })
+
     return {
         monedas,
         criptomonedas,
         cargando,
         cotizacion,
         obtenerCotizacion,
+        mostrarResultado
     }
 }
