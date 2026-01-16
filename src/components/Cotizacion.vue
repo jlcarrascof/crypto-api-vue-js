@@ -1,5 +1,10 @@
 <script setup>
-
+    defineProps({
+        cotizacion: {
+            type: Object,
+            required: true
+        }
+    })
 </script>
 
 <template>

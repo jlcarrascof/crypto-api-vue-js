@@ -74,7 +74,10 @@
 
             <Spinner v-if="cargando" />
 
-            <Cotizacion v-if="mostrarResultado" />
+            <Cotizacion 
+                v-if="mostrarResultado"
+                :cotizacion = "cotizacion" 
+            />
 
         </div>
     </div>
