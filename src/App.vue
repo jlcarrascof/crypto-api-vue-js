@@ -6,7 +6,6 @@
 
     const { monedas } = useCripto()
 
-    const criptomonedas = ref([])
     const error = ref('')
     const cotizar = reactive({
         moneda: '',
@@ -14,13 +13,6 @@
     })
     const cotizacion = ref({})
     const cargando = ref(false)
-
-    onMounted(() => {
-        const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?tsym=USD&limit=20';
-        fetch(url)
-            .then(respuesta => respuesta.json())
-            .then(({Data}) => criptomonedas.value = Data)
-    })
 
     const cotizarCripto = () => {
         // Checking that cotizar is full
