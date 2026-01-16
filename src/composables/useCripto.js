@@ -3,7 +3,10 @@ export default function useCripto() {
         console.log('Cotizando desde useCripto()')
     }
 
+    const auth = false
+
     return {
-        cotizarMoneda
+        cotizarMoneda,
+        auth
     }
 }
